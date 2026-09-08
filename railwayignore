@@ -1,0 +1,12 @@
+.git
+.github
+docs/
+*.md
+__pycache__
+*.pyc
+.DS_Store
+.venv
+venv/
+creds.json
+token.txt
+*.db
