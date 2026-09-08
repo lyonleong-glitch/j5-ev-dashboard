@@ -1,0 +1,12 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfile": "./Dockerfile"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "startCommand": "python server.py 8088",
+    "restartPolicyMaxRetries": 10
+  }
+}
