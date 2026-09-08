@@ -1,3 +1,4 @@
+cat > .railwayignore << 'EOF'
 .git
 .github
 docs/
@@ -10,3 +11,4 @@ venv/
 creds.json
 token.txt
 *.db
+EOF
