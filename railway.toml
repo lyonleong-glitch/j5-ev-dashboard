@@ -2,7 +2,6 @@
 builder = "dockerfile"
 dockerfile = "./Dockerfile"
 
-# Web service - serves the dashboard
 [[services]]
 name = "web"
 builder = "dockerfile"
@@ -11,7 +10,6 @@ startCommand = "python server.py 8088"
 port = 8088
 restartPolicyMaxRetries = 10
 
-# Logger service - polls telemetry 24/7
 [[services]]
 name = "logger"
 builder = "dockerfile"
@@ -19,12 +17,10 @@ dockerfile = "./Dockerfile"
 startCommand = "python logger.py --adaptive"
 restartPolicyMaxRetries = 10
 
-# Shared environment
 [env]
 CARLINKO_DATA = "/data"
 PORT = "8088"
-PYTHONUNBUFFERED = "1"
+PYTHONUNBUFFERABLE = "1"
 
-# Persistent volume (shared by both services)
 [volumes]
 data = "/data"
